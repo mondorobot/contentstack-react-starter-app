@@ -11,6 +11,23 @@ if (process.env.REACT_APP_CUSTOM_HOST) {
   Stack.setHost(process.env.REACT_APP_CUSTOM_HOST)
 }
 export default {
+  getSingleEntryById(contentTypeUid, contentEntryId) {
+    return new Promise((resolve, reject) => {
+      const query = Stack.ContentType(contentTypeUid).Entry(contentEntryId);
+      query
+      .fetch()
+      .then(
+        (res) => {
+          resolve(res.toJSON());
+        },
+        (error) => {
+          reject(error)
+        }
+      )
+    })
+    
+  },
+
   /**
    *
    * fetches all the entries from specific content-type
@@ -53,6 +70,7 @@ export default {
       const data = blogQuery.where("url", `${entryUrl}`).find()
       data.then(
         (result) => {
+          console.log(result)
           resolve(result[0])
         },
         (error) => {
