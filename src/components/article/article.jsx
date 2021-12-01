@@ -2,9 +2,6 @@ import React, {useState, useEffect} from 'react';
 import Stack from '../../sdk/entry';
 import * as S from './styles';
 
-// import Layout from '../components/layout';
-// import RenderComponenets from '../components/render-components';
-
 const Article = (props) => {
   const [pageData, setPageData] = useState();
   
@@ -26,9 +23,8 @@ const Article = (props) => {
     }
   };
 
-  
   if (!pageData) {
-    return '';
+    return null;
   }
 
   return (

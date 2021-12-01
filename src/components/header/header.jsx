@@ -4,7 +4,6 @@ import ACRLogo from '../../images/ACRLogo.png';
 import Hamburger from '../../icons/hamburger.png';
 import MagnifyingGlass from '../../icons/magnifying-glass.png';
 
-// src/images/ACRLogo.png
 const Header = () => {
   return (
     <S.HeaderWrap>
