@@ -16,7 +16,7 @@ const Header = () => {
             <S.TopLink>Whats New</S.TopLink>
             <S.TopLink>Journals</S.TopLink>
             <S.TopLink>Global Community</S.TopLink>
-            <S.TopLink>Donate</S.TopLink>
+            <S.TopLink bold>Donate</S.TopLink>
           </S.TopLinksWrapper>
           <S.TopLinksWrapper>
             <S.TopLink right>Login</S.TopLink>

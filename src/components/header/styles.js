@@ -33,7 +33,7 @@ export const HeaderSectionInner = styled.div`
   align-items:center;  
   display: flex;
   justify-content: space-between;
-  width: 144rem;
+  width: 114rem;
 `;
 
 export const HeaderTop = styled.div`
@@ -54,6 +54,7 @@ export const Logo = styled.img`
 export const TopLink = styled.li`
   color: #535A8D;  
   font-size: 1.3rem;
+  font-weight: ${props => props.bold ? '700' : '400'};
   margin-right: ${props => props.right ? '0' : '1.6rem'};
 
   &:hover{ 
