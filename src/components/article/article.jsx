@@ -10,7 +10,6 @@ const Article = (props) => {
   },[]);
 
   const testRequest = async () => {
-    console.log(props)
     try {
       const url = props.location.pathname.split('/')[2]
       const pageData = await Stack.getEntryByUrl(

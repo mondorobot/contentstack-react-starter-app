@@ -4,6 +4,7 @@ import PageA from './components/page_a/page_a.jsx';
 import './styles/style.css';
 import Header from './components/header/header';
 import Breadcrumbs from './components/breadcrumbs/breadcrumbs';
+import Footer from './components/footer/footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           render={(renderProps) => <PageA {...renderProps} />}
         />
       </Switch>
+      <Footer />
     </div>
   );
 }
