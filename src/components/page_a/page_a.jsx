@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './styles';
-import RightColumn from '../right_column/right_column';
+import RightColumn from '../suggested_sidebar/suggested_sidebar';
 import Article from '../article/article';
 
 const PageA = (props) => {
