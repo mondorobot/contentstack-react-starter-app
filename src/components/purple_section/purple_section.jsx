@@ -1,25 +1,26 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import * as S from './styles';
 import Stack from '../../sdk/entry';
 
 const PurpleSection = () => {
   const [content, setContent] = useState();
 
-  useEffect(()=>{
+  const fetchContent = useCallback(
+    async () => {
+      try {
+        const data = await Stack.getEntry('demofullwidthcta');
+        setContent(data[0][0]);
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    [setContent],
+  );
+  
+  useEffect(async () => {
     fetchContent();
-  },[])
+  },[fetchContent]);
 
-  const fetchContent = async () => {
-    try {
-      // demofullwidthcta
-      const data = await Stack.getEntry('demofullwidthcta');
-      console.log(data[0][0])
-      setContent(data[0][0]);
-
-    } catch (error) {
-      console.error(error)
-    }
-  };
 
   if(!content){
     return null;

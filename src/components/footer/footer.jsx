@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import * as S from './styles';
 import Stack from '../../sdk/entry';
 import FacebookIcon from '../../icons/facebook.png';
@@ -9,21 +9,20 @@ import YouTubeIcon from '../../icons/youtube.png';
 const Footer = () => {
   const [content, setContent] = useState();
 
-  useEffect(()=>{
-    fetchContent();
-  },[])
-
-  const fetchContent = async () => {
-    try {
-      // demofullwidthcta
-      const data = await Stack.getEntry('footer');
-      console.log(data[0][0])
-      setContent(data[0][0]);
-
-    } catch (error) {
-      console.error(error)
-    }
-  };
+  const fetchContent = useCallback(
+    async () => {
+      try {
+        const data = await Stack.getEntry('footer');
+        setContent(data[0][0]);
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    [setContent],
+  );
+  useEffect(async () => {
+    fetchContent()
+  },[fetchContent]);
 
   if(!content){
     return null;

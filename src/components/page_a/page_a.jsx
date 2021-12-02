@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './styles';
-import RightColumn from '../suggested_sidebar/suggested_sidebar';
+import SuggestedSidebar from '../suggested_sidebar/suggested_sidebar';
 import Article from '../article/article';
 import PurpleSection from '../purple_section/purple_section';
 
@@ -13,7 +13,7 @@ const PageA = (props) => {
             <Article {...props} />
           </S.LeftColumn>
           <S.RightColumn>
-            <RightColumn />
+            <SuggestedSidebar />
           </S.RightColumn>
         </S.PageContent>
         
