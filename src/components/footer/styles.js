@@ -3,13 +3,35 @@ import styled from 'styled-components'
 
 
 export const FooterBottom = styled.div`
-background-color: #E9EAEC;
-padding: 3rem 0;
+  background-color: #E9EAEC;
+  display:flex;
+  justify-content: center;
+  padding: 3rem 0;
 `;
 
-export const FooterBottomText = styled.p``;
 
-export const FooterBottomLink = styled.a``;
+export const FooterBottomText = styled.p`
+  color: #464953;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  margin: 0;
+`;
+
+export const FooterBottomLink = styled.a`
+  color: #464953;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  margin: 0 0 0 4rem;
+  text-decoration: none; 
+  &:hover {
+    color: #464953;
+  }
+`;
+
+export const FooterBottomLinkWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 export const FooterColumn = styled.div`
   display:flex;
@@ -30,8 +52,19 @@ export const FooterInner = styled.div`
   width: 114rem;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: ${props => props.bottom ? 'space-between' : 'start'};
+  ${(props) => {
+    if (props.bottom) {
+      return 'align-items: center;'
+    }
+  }}
 `;
+
+export const FooterSocialLink = styled.a`
+  display: inline-block;
+  margin-right: 1.6rem;
+`;
+
 
 export const FooterTop = styled.div`
   align-items: center;
@@ -71,3 +104,9 @@ export const Logo = styled.img`
   }
 `;
 
+export const SocialLinkWrap = styled.div``;
+
+export const SocialIcon = styled.img`
+  height: 2.6rem;
+  width: 2.6rem;
+`;

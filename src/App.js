@@ -13,7 +13,7 @@ function App() {
       <Breadcrumbs />
       <Switch>
         <Route
-          path='/demoinnerpagea/*'
+          path='/demoarticle/*'
           render={(renderProps) => <PageA {...renderProps} />}
         />
       </Switch>
