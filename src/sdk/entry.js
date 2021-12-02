@@ -11,6 +11,21 @@ if (process.env.REACT_APP_CUSTOM_HOST) {
   Stack.setHost(process.env.REACT_APP_CUSTOM_HOST)
 }
 export default {
+  test() {
+    return new Promise((resolve, reject) => {
+      const q = Stack.ContentType('demoarticle').Query().where('url', '/mondo-robot-test-article').find()
+      q.then( 
+        (res) => {
+          resolve(res);
+        },
+        (error) => {
+          reject(error)
+        }
+      )
+      
+    })
+  },
+
   getSingleEntryById(contentTypeUid, contentEntryId) {
     return new Promise((resolve, reject) => {
       const query = Stack.ContentType(contentTypeUid).Entry(contentEntryId);
@@ -70,7 +85,6 @@ export default {
       const data = blogQuery.where("url", `${entryUrl}`).find()
       data.then(
         (result) => {
-          console.log(result)
           resolve(result[0])
         },
         (error) => {

@@ -4,7 +4,7 @@ export const BodyText = styled.p`
 font-size: 22px;
 line-height: 32px;
 margin-bottom: 5rem;
-max-width: 56rem;
+max-width: 60rem;
 `;
 
 export const LargeHeading = styled.h4`
@@ -12,7 +12,7 @@ font-weight: 800;
 font-size: 34px;
 line-height: 48px;
 margin-bottom: 2rem;
-max-width: 56rem;
+max-width: 60rem;
 
 `;
 

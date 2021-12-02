@@ -10,7 +10,7 @@ const Article = (props) => {
       try {
         const url = props.location.pathname.split('/')[2]
         const data = await Stack.getEntryByUrl(
-          'demoinnerpagea',
+          'demoarticle',
           `/${url}`
         )
         setContent(data[0]);
@@ -32,7 +32,10 @@ const Article = (props) => {
 
   return (
     <S.Article>
-      <S.HeroImg src={content.hero_image.url} />
+      {content.hero_image?.url &&
+        <S.HeroImg src={content.hero_image.url} />
+      }
+      
       <S.Author>{content.author}</S.Author>
       <S.Title>{content.title}</S.Title>
       <S.TitleDivider />

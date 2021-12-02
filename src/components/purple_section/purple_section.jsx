@@ -16,11 +16,10 @@ const PurpleSection = () => {
     },
     [setContent],
   );
-  
+
   useEffect(async () => {
     fetchContent();
   },[fetchContent]);
-
 
   if(!content){
     return null;

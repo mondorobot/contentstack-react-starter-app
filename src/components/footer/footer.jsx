@@ -14,6 +14,9 @@ const Footer = () => {
       try {
         const data = await Stack.getEntry('footer');
         setContent(data[0][0]);
+
+        const test = await Stack.test()
+        console.log(test)
       } catch (error) {
         console.error(error)
       }
